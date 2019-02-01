@@ -3,12 +3,19 @@ package com.company;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
+
+import javax.xml.soap.Text;
 import java.lang.*;
+import java.lang.reflect.Array;
 
 public class calc extends Application  {
 
@@ -18,12 +25,40 @@ public class calc extends Application  {
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("HBox Experiment 1");
-        Button one = new Button("1");
-        Button two = new Button("1");
+        GridPane canvas = new GridPane();
 
-        HBox hbox = new HBox(one);
+        Button plus = new Button("+");
+        Button minus = new Button("-");
+        Button multiply = new Button("*");
+        Button divide = new Button("/");
+        Button equals = new Button("=");
+        Button clear = new Button("Clear");
+        TextField num1 = new TextField();
+        TextField num2 = new TextField();
+        Label answer = new Label("?");
 
-        Scene scene = new Scene(hbox, 200, 100);
+        canvas.add(divide, 0, 0);
+        canvas.add(multiply, 1,0);
+        canvas.add(plus, 0, 1);
+        canvas.add(minus, 1, 1);
+        canvas.add(clear,0,4,2,1);
+
+
+        canvas.add(num1,0,2);
+        canvas.add(num2,1,2);
+        canvas.add(answer,0,3,2,1);
+
+        num1.setPrefWidth(70);
+        num2.setPrefWidth(70);
+        divide.setPrefWidth(70);
+        multiply.setPrefWidth(70);
+        plus.setPrefWidth(70);
+        minus.setPrefWidth(70);
+        clear.setPrefWidth(150);
+        answer.setPrefWidth(150);
+
+
+        Scene scene = new Scene(canvas, 200, 100);
         primaryStage.setScene(scene);
         primaryStage.show();
 
