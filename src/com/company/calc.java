@@ -31,11 +31,12 @@ public class calc extends Application  {
         Button minus = new Button("-");
         Button multiply = new Button("*");
         Button divide = new Button("/");
-        Button equals = new Button("=");
         Button clear = new Button("Clear");
         TextField num1 = new TextField();
         TextField num2 = new TextField();
-        Label answer = new Label("?");
+        Button lastInp = new Button("Last");
+        Button equals = new Button("=");
+        Label answer = new Label("answer");
 
         canvas.add(divide, 0, 0);
         canvas.add(multiply, 1,0);
@@ -43,9 +44,10 @@ public class calc extends Application  {
         canvas.add(minus, 1, 1);
         canvas.add(clear,0,4,2,1);
 
-
         canvas.add(num1,0,2);
         canvas.add(num2,1,2);
+        canvas.add(lastInp,0,3,2,1);
+        canvas.add(equals,0,3,2,1);
         canvas.add(answer,0,3,2,1);
 
         num1.setPrefWidth(70);
@@ -54,11 +56,13 @@ public class calc extends Application  {
         multiply.setPrefWidth(70);
         plus.setPrefWidth(70);
         minus.setPrefWidth(70);
-        clear.setPrefWidth(150);
-        answer.setPrefWidth(150);
+        clear.setPrefWidth(140);
+        equals.setPrefWidth(140);
+        lastInp.setPrefWidth(140);
+        answer.setPrefWidth(140);
 
 
-        Scene scene = new Scene(canvas, 200, 100);
+        Scene scene = new Scene(canvas, 500, 500);
         primaryStage.setScene(scene);
         primaryStage.show();
 
