@@ -42,7 +42,7 @@ public class calc extends Application  {
         TextField num2 = new TextField();
         Button lastInp = new Button("Last");
         Button equals = new Button("=");
-        //Label answer = new Label("answer");
+        //Label answer = new Label("answer");3
 
         plus.setOnAction(new EventHandler<ActionEvent>() {
             @Override
